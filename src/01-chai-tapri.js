@@ -28,4 +28,8 @@
  */
 export function chaiTapriRevenue(customers) {
   // Your code here
+  if(typeof customers === 'number' && customers === Number.parseInt(customers) && customers > 0) {
+    return { totalChai: customers, totalRevenue: ((Number.parseInt(customers/3) * 15) + ((customers - Number.parseInt(customers/3)) * 10)) }
+  }
+  return { totalChai: 0, totalRevenue: 0 };
 }
